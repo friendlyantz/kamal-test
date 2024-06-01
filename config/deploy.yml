@@ -1,0 +1,13 @@
+service: kamal-test
+image: friendlyantz/kamal-test
+servers:
+  - 192.168.1.42
+registry:
+  username: friendlyantz
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+env:
+  secret:
+    - RAILS_MASTER_KEY
+ssh:
+  user: friendlyantz
