@@ -1,7 +1,7 @@
 service: kamal-test
 image: friendlyantz/kamal-test
 servers:
-  - 192.168.1.42
+  - 192.168.1.46
 registry:
   username: friendlyantz
   password:
@@ -9,5 +9,3 @@ registry:
 env:
   secret:
     - RAILS_MASTER_KEY
-ssh:
-  user: friendlyantz
