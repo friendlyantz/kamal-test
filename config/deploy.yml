@@ -9,12 +9,3 @@ registry:
 env:
   secret:
     - RAILS_MASTER_KEY
-traefik:
-  options:
-    publish:
-      - "443:443"
-  labels:
-    traefik.http.routers.catchall.entryPoints: http
-  args:
-    entryPoints.web.address: ":80"
-    entryPoints.websecure.address: ":443"
