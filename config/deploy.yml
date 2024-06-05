@@ -1,11 +1,21 @@
 service: kamal-test
 image: friendlyantz/kamal-test
 servers:
-  - 192.168.1.46
+  web:
+    hosts:
+      - 192.168.1.46
+    port: "3000:3000"
+    options:
+      cpus: 0.5 
+      memory: 0.35g
+      memory-swap: 0.5g 
 registry:
   username: friendlyantz
   password:
-    - KAMAL_REGISTRY_PASSWORD
+    - DOCKER_ACCESS_TOKEN=${DOCKER_ACCESS_TOKEN}
 env:
   secret:
     - RAILS_MASTER_KEY
+    - SUPER_SECRET=${SUPER_SECRET}
+  clear:
+    RAILS_LOG_TO_STDOUT: true
